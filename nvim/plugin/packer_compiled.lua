@@ -74,6 +74,11 @@ end
 time([[try_loadstring definition]], false)
 time([[Defining packer_plugins]], true)
 _G.packer_plugins = {
+  ["lazygit.nvim"] = {
+    loaded = true,
+    path = "/home/HolyDemon/.local/share/nvim/site/pack/packer/start/lazygit.nvim",
+    url = "https://github.com/kdheepak/lazygit.nvim"
+  },
   ["packer.nvim"] = {
     loaded = true,
     path = "/home/HolyDemon/.local/share/nvim/site/pack/packer/start/packer.nvim",
