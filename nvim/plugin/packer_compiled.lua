@@ -84,6 +84,11 @@ _G.packer_plugins = {
     path = "/home/HolyDemon/.local/share/nvim/site/pack/packer/start/plenary.nvim",
     url = "https://github.com/nvim-lua/plenary.nvim"
   },
+  rnvimr = {
+    loaded = true,
+    path = "/home/HolyDemon/.local/share/nvim/site/pack/packer/start/rnvimr",
+    url = "https://github.com/kevinhwang91/rnvimr"
+  },
   ["telescope.nvim"] = {
     loaded = true,
     path = "/home/HolyDemon/.local/share/nvim/site/pack/packer/start/telescope.nvim",
