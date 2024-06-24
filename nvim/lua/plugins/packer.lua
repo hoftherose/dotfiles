@@ -6,7 +6,16 @@ return require('packer').startup(function(use)
 	use ({
 		'kdheepak/lazygit.nvim',
 		requires = {
-			"nvim-lua/plenary.nvim",
+			'nvim-lua/plenary.nvim',
+		},
+	})
+	use ({
+		'crnvl96/lazydocker.nvim',
+		config = function()
+			require("lazydocker").setup()
+		end,
+		requires = {
+			'MunifTanjim/nui.nvim'
 		},
 	})
 
@@ -14,5 +23,5 @@ return require('packer').startup(function(use)
 		'nvim-telescope/telescope.nvim', tag = '0.1.4',
 		requires = {{ 'nvim-lua/plenary.nvim' }}
 	}
-
+	use { "scottmckendry/cyberdream.nvim" }
 end)
