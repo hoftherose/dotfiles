@@ -79,6 +79,11 @@ _G.packer_plugins = {
     path = "/home/HolyDemon/.local/share/nvim/site/pack/packer/start/cyberdream.nvim",
     url = "https://github.com/scottmckendry/cyberdream.nvim"
   },
+  harpoon = {
+    loaded = true,
+    path = "/home/HolyDemon/.local/share/nvim/site/pack/packer/start/harpoon",
+    url = "https://github.com/theprimeagen/harpoon"
+  },
   ["lazydocker.nvim"] = {
     config = { "\27LJ\2\n8\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\15lazydocker\frequire\0" },
     loaded = true,
@@ -94,6 +99,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/HolyDemon/.local/share/nvim/site/pack/packer/start/nui.nvim",
     url = "https://github.com/MunifTanjim/nui.nvim"
+  },
+  ["nvim-treesitter"] = {
+    loaded = true,
+    path = "/home/HolyDemon/.local/share/nvim/site/pack/packer/start/nvim-treesitter",
+    url = "https://github.com/nvim-treesitter/nvim-treesitter"
   },
   ["packer.nvim"] = {
     loaded = true,
@@ -114,6 +124,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/HolyDemon/.local/share/nvim/site/pack/packer/start/telescope.nvim",
     url = "https://github.com/nvim-telescope/telescope.nvim"
+  },
+  undotree = {
+    loaded = true,
+    path = "/home/HolyDemon/.local/share/nvim/site/pack/packer/start/undotree",
+    url = "https://github.com/mbbill/undotree"
   }
 }
 
