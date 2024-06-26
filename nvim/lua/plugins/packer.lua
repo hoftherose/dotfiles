@@ -44,4 +44,5 @@ return require('packer').startup(function(use)
 			require("gitsigns").setup()
 		end,
 	}
+	use { 'rktjmp/playtime.nvim' }
 end)
