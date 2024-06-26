@@ -27,5 +27,9 @@ return require('packer').startup(function(use)
 	use { 'nvim-treesitter/nvim-treesitter', {run = ':TSUpdate'} }
 	use { 'theprimeagen/harpoon' }
 	use { 'mbbill/undotree' }
-	-- use { 'hsalem7/nvim-k8s' } --
+	use {
+		'nvim-lualine/lualine.nvim',
+		dependencies = { 'nvim-tree/nvim-web-devicons' }
+	}
+	use { 'holy-tech/k9s.nvim' }
 end)

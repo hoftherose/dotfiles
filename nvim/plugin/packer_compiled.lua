@@ -84,6 +84,11 @@ _G.packer_plugins = {
     path = "/home/HolyDemon/.local/share/nvim/site/pack/packer/start/harpoon",
     url = "https://github.com/theprimeagen/harpoon"
   },
+  ["k9s.nvim"] = {
+    loaded = true,
+    path = "/home/HolyDemon/.local/share/nvim/site/pack/packer/start/k9s.nvim",
+    url = "https://github.com/holy-tech/k9s.nvim"
+  },
   ["lazydocker.nvim"] = {
     config = { "\27LJ\2\n8\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\15lazydocker\frequire\0" },
     loaded = true,
@@ -94,6 +99,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/HolyDemon/.local/share/nvim/site/pack/packer/start/lazygit.nvim",
     url = "https://github.com/kdheepak/lazygit.nvim"
+  },
+  ["lualine.nvim"] = {
+    loaded = true,
+    path = "/home/HolyDemon/.local/share/nvim/site/pack/packer/start/lualine.nvim",
+    url = "https://github.com/nvim-lualine/lualine.nvim"
   },
   ["nui.nvim"] = {
     loaded = true,
