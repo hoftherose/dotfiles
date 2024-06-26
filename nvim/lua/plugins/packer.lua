@@ -32,4 +32,16 @@ return require('packer').startup(function(use)
 		dependencies = { 'nvim-tree/nvim-web-devicons' }
 	}
 	use { 'holy-tech/k9s.nvim' }
+	use {
+		'max397574/better-escape.nvim',
+		config = function()
+			require("better_escape").setup()
+		end,
+	}
+	use {
+		'lewis6991/gitsigns.nvim',
+		config = function()
+			require("gitsigns").setup()
+		end,
+	}
 end)
