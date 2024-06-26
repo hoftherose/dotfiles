@@ -162,9 +162,7 @@ handle_image() {
         ## Video
         video/*)
             # Thumbnail
-	    ffmpeg -threads $(nproc) -i "${FILE_PATH}" -ss 00:00:00.0 -t 1 -an "${IMAGE_CACHE_PATH%.*}" -s 0
-	    mv "${IMAGE_CACHE_PATH%.*}.gif" "${IMAGE_CACHE_PATH}"
-	    rm "${IMAGE_CACHE_PATH%.*}.gif" 
+	    ffmpeg -threads $(nproc) -i "${FILE_PATH}" -ss 00:00:00.0 -t 10 -an -f gif "${IMAGE_CACHE_PATH}" -s 0
             exit 6;;
 
 
