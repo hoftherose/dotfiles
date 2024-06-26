@@ -127,6 +127,12 @@ _G.packer_plugins = {
     path = "/home/HolyDemon/.local/share/nvim/site/pack/packer/start/nvim-treesitter",
     url = "https://github.com/nvim-treesitter/nvim-treesitter"
   },
+  ["obsidian.nvim"] = {
+    config = { "\27LJ\2\nÆ\1\0\0\5\0\a\0\r6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\5\0004\3\3\0005\4\3\0>\4\1\0035\4\4\0>\4\2\3=\3\6\2B\0\2\1K\0\1\0\15workspaces\1\0\1\15workspaces\0\1\0\2\tname\18FabricTesting\tpath\30~/.obsidian/FabricTesting\1\0\2\tname\nPsych\tpath\22~/.obsidian/Psych\nsetup\robsidian\frequire\0" },
+    loaded = true,
+    path = "/home/HolyDemon/.local/share/nvim/site/pack/packer/start/obsidian.nvim",
+    url = "https://github.com/epwalsh/obsidian.nvim"
+  },
   ["packer.nvim"] = {
     loaded = true,
     path = "/home/HolyDemon/.local/share/nvim/site/pack/packer/start/packer.nvim",
@@ -160,6 +166,10 @@ _G.packer_plugins = {
 }
 
 time([[Defining packer_plugins]], false)
+-- Config for: obsidian.nvim
+time([[Config for obsidian.nvim]], true)
+try_loadstring("\27LJ\2\nÆ\1\0\0\5\0\a\0\r6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\5\0004\3\3\0005\4\3\0>\4\1\0035\4\4\0>\4\2\3=\3\6\2B\0\2\1K\0\1\0\15workspaces\1\0\1\15workspaces\0\1\0\2\tname\18FabricTesting\tpath\30~/.obsidian/FabricTesting\1\0\2\tname\nPsych\tpath\22~/.obsidian/Psych\nsetup\robsidian\frequire\0", "config", "obsidian.nvim")
+time([[Config for obsidian.nvim]], false)
 -- Config for: lazydocker.nvim
 time([[Config for lazydocker.nvim]], true)
 try_loadstring("\27LJ\2\n8\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\15lazydocker\frequire\0", "config", "lazydocker.nvim")

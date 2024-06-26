@@ -45,4 +45,25 @@ return require('packer').startup(function(use)
 		end,
 	}
 	use { 'rktjmp/playtime.nvim' }
+	use ({
+		'epwalsh/obsidian.nvim',
+		tag = "*",
+		requires = {
+			'nvim-lua/plenary.nvim',
+		},
+		config = function()
+			require('obsidian').setup({
+				workspaces = {
+					{
+						name = 'Psych',
+						path = '~/.obsidian/Psych',
+					},
+					{
+						name = 'FabricTesting',
+						path = '~/.obsidian/FabricTesting',
+					},
+				},
+			})
+		end,
+	})
 end)
