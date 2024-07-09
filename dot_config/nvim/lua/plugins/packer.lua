@@ -35,7 +35,16 @@ return require('packer').startup(function(use)
 	use {
 		'max397574/better-escape.nvim',
 		config = function()
-			require("better_escape").setup()
+			require("better_escape").setup({
+                mappings = {
+                    t = {
+                        j = {
+                            k = false,
+                            j = false
+                        }
+                    }
+                }
+            })
 		end,
 	}
 	use {
