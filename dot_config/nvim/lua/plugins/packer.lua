@@ -112,4 +112,5 @@ return require('packer').startup(function(use)
         end
     })
     use ({ 'terryma/vim-multiple-cursors' })
+    use ({ 'tpope/vim-commentary' })
 end)
