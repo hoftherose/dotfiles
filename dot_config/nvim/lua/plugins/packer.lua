@@ -95,5 +95,13 @@ return require('packer').startup(function(use)
        config = function()
            require("nvim-surround").setup({})
        end
-   })
+    })
+    use ({
+        'Wansmer/treesj',
+        requires = { 'nvim-treesitter/nvim-treesitter' },
+        config = function()
+            require('treesj').setup({})
+        end
+    })
+    use ({ 'f-person/git-blame.nvim' })
 end)
