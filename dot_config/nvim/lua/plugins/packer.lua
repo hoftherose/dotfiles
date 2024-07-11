@@ -2,7 +2,7 @@ vim.cmd [[packadd packer.nvim]]
 
 return require('packer').startup(function(use)
 	use 'wbthomason/packer.nvim'
-	use ({ 'kevinhwang91/rnvimr', {run = 'make sync'} })
+	use ({ 'kevinhwang91/rnvimr', run = 'make sync' })
 	use ({
 		'kdheepak/lazygit.nvim',
 		requires = {
@@ -24,7 +24,7 @@ return require('packer').startup(function(use)
 		requires = {{ 'nvim-lua/plenary.nvim' }}
 	}
 	use { 'scottmckendry/cyberdream.nvim' }
-	use { 'nvim-treesitter/nvim-treesitter', {run = ':TSUpdate'} }
+	use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
 	use { 'theprimeagen/harpoon' }
 	use { 'mbbill/undotree' }
 	use {
@@ -89,4 +89,11 @@ return require('packer').startup(function(use)
 			{'L3MON4D3/LuaSnip'},
 		}
 	}
+    use ({
+       "kylechui/nvim-surround",
+       tag = "*",
+       config = function()
+           require("nvim-surround").setup({})
+       end
+   })
 end)
