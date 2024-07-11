@@ -111,4 +111,5 @@ return require('packer').startup(function(use)
             require("toggleterm").setup()
         end
     })
+    use ({ 'terryma/vim-multiple-cursors' })
 end)
