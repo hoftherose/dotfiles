@@ -1,2 +1,1 @@
-local tagbar = require("tagbar")
-vim.keymap.set('n', '<leader>tt', builtin.git_files, {})
+vim.keymap.set('n', '<leader>tt', "<cmd>TagbarToggle<CR>", {})
