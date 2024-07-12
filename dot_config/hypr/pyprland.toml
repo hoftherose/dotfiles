@@ -1,0 +1,3 @@
+[pyprland]
+plugins = ["toggle_special", "magnify", "shift_monitors", "system_notifier"]
+
