@@ -2,13 +2,13 @@ vim.cmd [[packadd packer.nvim]]
 
 return require('packer').startup(function(use)
 	use ({ 'wbthomason/packer.nvim' })
-	use ({ 'kevinhwang91/rnvimr', run = 'make sync' })
+	use ({ 'kevinhwang91/rnvimr', run = 'make sync' }) -- er + terminal shortcuts + ranger shortcuts
 	use ({
 		'kdheepak/lazygit.nvim',
 		requires = {
 			'nvim-lua/plenary.nvim',
 		},
-	})
+	}) -- lg + terminal shortcuts + lazygit shortcuts
 	use ({
 		'crnvl96/lazydocker.nvim',
 		config = function()
@@ -17,21 +17,20 @@ return require('packer').startup(function(use)
 		requires = {
 			'MunifTanjim/nui.nvim'
 		},
-	})
-
+	}) -- ld + terminal shortcuts + lazydocker shortcuts
+	use ({ 'holy-tech/k9s.nvim' }) -- lk + terminal shortcuts + k9s shortcuts
 	use ({
 		'nvim-telescope/telescope.nvim', tag = '0.1.4',
 		requires = {{ 'nvim-lua/plenary.nvim' }}
-	})
+	}) -- s*
 	use ({ 'scottmckendry/cyberdream.nvim' })
 	use ({ 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' })
-	use ({ 'theprimeagen/harpoon' })
-	use ({ 'mbbill/undotree' })
+	use ({ 'theprimeagen/harpoon' }) -- ee/ea/e#
+	use ({ 'mbbill/undotree' }) -- tu
 	use ({
 		'nvim-lualine/lualine.nvim',
 		dependencies = { 'nvim-tree/nvim-web-devicons' }
 	})
-	use ({ 'holy-tech/k9s.nvim' })
 	use ({
 		'max397574/better-escape.nvim',
 		config = function()
@@ -46,7 +45,7 @@ return require('packer').startup(function(use)
                 }
             })
 		end,
-	})
+	}) -- insert or command mode jj/jk 
 	use ({
 		'lewis6991/gitsigns.nvim',
 		config = function()
@@ -95,7 +94,7 @@ return require('packer').startup(function(use)
        config = function()
            require('nvim-surround').setup({})
        end
-    })
+    }) -- ysiw csiw dsiw
     use ({
         'Wansmer/treesj',
         requires = { 'nvim-treesitter/nvim-treesitter' },
@@ -110,9 +109,9 @@ return require('packer').startup(function(use)
         config = function()
             require('toggleterm').setup()
         end
-    })
-    use ({ 'terryma/vim-multiple-cursors' })
-    use ({ 'tpope/vim-commentary' })
-    use ({ 'preservim/tagbar' })
+    }) -- et
+    use ({ 'terryma/vim-multiple-cursors' }) -- v mode C-n
+    use ({ 'tpope/vim-commentary' }) -- gcc toggle comments
+    use ({ 'preservim/tagbar' }) -- tt
     use ({ 'neoclide/coc.nvim' })
 end)
