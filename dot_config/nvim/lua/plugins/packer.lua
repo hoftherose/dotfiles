@@ -1,7 +1,7 @@
 vim.cmd [[packadd packer.nvim]]
 
 return require('packer').startup(function(use)
-	use 'wbthomason/packer.nvim'
+	use ({ 'wbthomason/packer.nvim' })
 	use ({ 'kevinhwang91/rnvimr', run = 'make sync' })
 	use ({
 		'kdheepak/lazygit.nvim',
@@ -19,23 +19,23 @@ return require('packer').startup(function(use)
 		},
 	})
 
-	use {
+	use ({
 		'nvim-telescope/telescope.nvim', tag = '0.1.4',
 		requires = {{ 'nvim-lua/plenary.nvim' }}
-	}
-	use { 'scottmckendry/cyberdream.nvim' }
-	use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
-	use { 'theprimeagen/harpoon' }
-	use { 'mbbill/undotree' }
-	use {
+	})
+	use ({ 'scottmckendry/cyberdream.nvim' })
+	use ({ 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' })
+	use ({ 'theprimeagen/harpoon' })
+	use ({ 'mbbill/undotree' })
+	use ({
 		'nvim-lualine/lualine.nvim',
 		dependencies = { 'nvim-tree/nvim-web-devicons' }
-	}
-	use { 'holy-tech/k9s.nvim' }
-	use {
+	})
+	use ({ 'holy-tech/k9s.nvim' })
+	use ({
 		'max397574/better-escape.nvim',
 		config = function()
-			require("better_escape").setup({
+			require('better_escape').setup({
                 mappings = {
                     t = {
                         j = {
@@ -46,17 +46,17 @@ return require('packer').startup(function(use)
                 }
             })
 		end,
-	}
-	use {
+	})
+	use ({
 		'lewis6991/gitsigns.nvim',
 		config = function()
-			require("gitsigns").setup()
+			require('gitsigns').setup()
 		end,
-	}
-	use { 'rktjmp/playtime.nvim' }
+	})
+	use ({ 'rktjmp/playtime.nvim' })
 	use ({
 		'epwalsh/obsidian.nvim',
-		tag = "*",
+		tag = '*',
 		requires = {
 			'nvim-lua/plenary.nvim',
 		},
@@ -75,7 +75,7 @@ return require('packer').startup(function(use)
 			})
 		end,
 	})
-	use {
+	use ({
 		'VonHeikemen/lsp-zero.nvim',
 		branch = 'v3.x',
 		requires = {
@@ -88,12 +88,12 @@ return require('packer').startup(function(use)
 			{'hrsh7th/cmp-nvim-lsp'},
 			{'L3MON4D3/LuaSnip'},
 		}
-	}
+	})
     use ({
-       "kylechui/nvim-surround",
-       tag = "*",
+       'kylechui/nvim-surround',
+       tag = '*',
        config = function()
-           require("nvim-surround").setup({})
+           require('nvim-surround').setup({})
        end
     })
     use ({
@@ -108,7 +108,7 @@ return require('packer').startup(function(use)
         'akinsho/toggleterm.nvim',
         tag = '*',
         config = function()
-            require("toggleterm").setup()
+            require('toggleterm').setup()
         end
     })
     use ({ 'terryma/vim-multiple-cursors' })
