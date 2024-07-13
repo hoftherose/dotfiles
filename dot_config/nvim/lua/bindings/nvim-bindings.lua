@@ -48,7 +48,9 @@ vim.keymap.set("n", "<leader>d", "\"_d")
 vim.keymap.set("v", "<leader>d", "\"_d")
 
 vim.keymap.set("n", "Q", "<nop>")
--- vim.keymap.set("n", "<C-f>", "<cmd>!byobu neww tmux-sessionizer<CR>")
+
+vim.keymap.set('n', '<leader>pc', '<cmd>silent !tmux-closer<CR>')
+vim.keymap.set('n', '<leader>po', '<cmd>silent !byobu neww tmux-sessionizer<CR>')
 -- https://www.reddit.com/r/neovim/comments/14gyqau/what_is_the_trick_theprimegen_is_using_to_search/
 vim.keymap.set("n", "<leader>f", function()
     vim.lsp.buf.format()
