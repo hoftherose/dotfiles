@@ -1,0 +1,21 @@
+#!/usr/bin/env bash
+
+current_session=$(byobu display-message -p '#S')
+if [[ current_session == 'main' ]]; then
+    exit 0
+fi
+
+tmux_running=$(pgrep tmux)
+
+if [[ -z $BYOBU ]] && [[ -z $tmux_running ]]; then
+    byobu new-session -s main -c $HOME
+    exit 0
+fi
+
+if ! byobu has-session -t=main 2> /dev/null; then
+    byobu new-session -ds main -c $HOME
+fi
+
+byobu switch-client -t main
+byobu kill-session -t $current_session
+
