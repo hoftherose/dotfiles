@@ -14,13 +14,13 @@ selected_path=$(dirname "$selected")
 selected_name=$(basename "$selected_path" | tr . _)
 tmux_running=$(pgrep tmux)
 
-if [[ -z $BYOBU ]] && [[ -z $tmux_running ]]; then
-    byobu new-session -s $selected_name -c $selected_path nvim
-    exit 0
+if ! byobu has-session -t=$selected_name 2> /dev/null; then
+    byobu new-session -ds $selected_name -c $selected_path
 fi
 
-if ! byobu has-session -t=$selected_name 2> /dev/null; then
-    byobu new-session -ds $selected_name -c $selected_path nvim
+if [[ -z $BYOBU ]] && [[ -z $tmux_running ]]; then
+    byobu new-session -s $selected_name -c $selected_path
+    exit 0
 fi
 
 byobu switch-client -t $selected_name
