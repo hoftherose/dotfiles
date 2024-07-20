@@ -22,7 +22,7 @@ end
 
 lsp_zero.on_attach(custom_on_attach)
 
-lsp_zero.setup_servers({ 'gopls' })
+lsp_zero.setup_servers({ 'gopls', 'ruff-lsp' })
 lsp_zero.configure('gopls', {
     cmd = {"gopls"},
     settings = {
@@ -35,6 +35,19 @@ lsp_zero.configure('gopls', {
         }
     }
 })
+lsp_zero.configure('ruff-lsp', {
+    cmd = {'ruff-lsp'},
+    settings = {
+        codeAction = {
+            disableRuleComment = {
+                enable = false,
+            },
+        },
+        lint = {
+            run = 'onSave',
+        },
+    }
+})
 
 -- to learn how to use mason.nvim
 -- read this: https://github.com/VonHeikemen/lsp-zero.nvim/blob/v3.x/doc/md/guide/integrate-with-mason-nvim.md
@@ -45,6 +58,7 @@ mason.setup({})
 mason_lsp.setup({
   ensure_installed = {
       "gopls",
+      "ruff_lsp",
   },
 })
 
