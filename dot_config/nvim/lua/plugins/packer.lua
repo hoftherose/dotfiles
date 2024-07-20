@@ -114,5 +114,8 @@ return require('packer').startup(function(use)
     use ({ 'terryma/vim-multiple-cursors' }) -- v mode C-n
     use ({ 'tpope/vim-commentary' }) -- gcc toggle comments TODO change to mc
     use ({ 'preservim/tagbar' }) -- tt
-    use ({ 'neoclide/coc.nvim' }) -- TODO config
+    use ({
+        'neoclide/coc.nvim',
+        branch = 'release',
+    }) -- TODO config
 end)
