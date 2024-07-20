@@ -121,10 +121,10 @@ return require('packer').startup(function(use)
         branch = 'regexp',
         config = function()
             require('venv-selector').setup()
+            keys = {
+                { '<leader>mv', '<cmd>VenvSelector<CR>' },
+            }
         end,
-        keys = {
-            { 'mv', '<cmd>VenvSelector<CR>' },
-        },
     })
     use ({ 'f-person/git-blame.nvim' })
     use ({
