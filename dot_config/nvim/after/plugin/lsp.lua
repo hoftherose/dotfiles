@@ -22,7 +22,7 @@ end
 
 lsp_zero.on_attach(custom_on_attach)
 
-lsp_zero.setup_servers({ 'gopls', 'ruff-lsp' })
+lsp_zero.setup_servers({ 'gopls', 'ruff_lsp' })
 lsp_zero.configure('gopls', {
     cmd = {"gopls"},
     settings = {
@@ -35,8 +35,7 @@ lsp_zero.configure('gopls', {
         }
     }
 })
-lsp_zero.configure('ruff-lsp', {
-    cmd = {'ruff-lsp'},
+lsp_zero.configure('ruff_lsp', {
     settings = {
         codeAction = {
             disableRuleComment = {
