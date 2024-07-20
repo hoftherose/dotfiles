@@ -19,25 +19,38 @@ lsp_zero.on_attach(function(client, bufnr)
   vim.keymap.set('n', '<leader>dk', vim.diagnostic.goto_next, opt 'Move to next diagnostic')
 end)
 
+lsp_zero.setup_servers({ 'gopls' })
+lsp_zero.configure('gopls', {
+    cmd = {"gopls"},
+    settings = {
+        gopls = {
+            completeUnimported = true,
+            usePlaceholders = true,
+            analyses = {
+                unusedparams = true
+            },
+        }
+    }
+})
 
 -- to learn how to use mason.nvim
 -- read this: https://github.com/VonHeikemen/lsp-zero.nvim/blob/v3.x/doc/md/guide/integrate-with-mason-nvim.md
-mason = require('mason')
-mason_lsp = require('mason-lspconfig')
-cmp = require('cmp')
-cmp_lsp = require('cmp_nvim_lsp')
+-- mason = require('mason')
+-- mason_lsp = require('mason-lspconfig')
+-- cmp = require('cmp')
+-- cmp_lsp = require('cmp_nvim_lsp')
 
-mason.setup({})
-mason_lsp.setup({
-  ensure_installed = {
-      "gopls",
-  },
-  handlers = {
-    function(server_name) -- defualt handler
-      require('lspconfig')[server_name].setup({})
-    end,
-  },
-})
+-- mason.setup({})
+-- mason_lsp.setup({
+--   ensure_installed = {
+--       "gopls",
+--   },
+--   handlers = {
+--     function(server_name) -- defualt handler
+--       require('lspconfig')[server_name].setup({})
+--     end,
+--   },
+-- })
 
 vim.keymap.set('n', '<leader>mo', '<cmd>Mason<CR>', {})
 
