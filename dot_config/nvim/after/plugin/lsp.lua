@@ -22,7 +22,7 @@ end
 
 lsp_zero.on_attach(custom_on_attach)
 
-lsp_zero.setup_servers({ 'gopls', 'ruff' })--, 'basedpyright', 'ruff_lsp' })
+lsp_zero.setup_servers({ 'gopls', 'basedpyright' })
 lsp_zero.configure('gopls', {
     cmd = {'gopls'},
     settings = {
@@ -35,9 +35,7 @@ lsp_zero.configure('gopls', {
         }
     }
 })
-
--- lsp_zero.configure('basedpyright', {})
-lsp_zero.configure('ruff', {})
+lsp_zero.configure('basedpyright', {})
 
 -- lsp_zero.configure('ruff_lsp', {
 --     settings = {
@@ -61,9 +59,8 @@ mason.setup({})
 mason_lsp.setup({
   ensure_installed = {
       "gopls",
+      "basedpyright",
       -- "ruff_lsp",
-      "ruff",
-      -- "basedpyright",
   },
 })
 
