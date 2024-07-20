@@ -3,7 +3,8 @@ local lsp_zero = require('lsp-zero')
 local function opt(desc)
     return { buffer = bufnr, desc = "LSP " .. desc }
 end
-lsp_zero.on_attach(function(client, bufnr)
+
+function custom_on_attach(client, bufnr)
   -- see :help lsp-zero-keybindings
   -- to learn the available actions
   -- lsp_zero.default_keymaps({buffer = bufnr})
@@ -17,7 +18,9 @@ lsp_zero.on_attach(function(client, bufnr)
   vim.keymap.set('n', '<leader>dh', vim.diagnostic.open_float, opt 'Open diagnostic window')
   vim.keymap.set('n', '<leader>dj', vim.diagnostic.goto_prev, opt 'Move to prev diagnostic')
   vim.keymap.set('n', '<leader>dk', vim.diagnostic.goto_next, opt 'Move to next diagnostic')
-end)
+end
+
+lsp_zero.on_attach(custom_on_attach)
 
 lsp_zero.setup_servers({ 'gopls' })
 lsp_zero.configure('gopls', {
@@ -35,22 +38,15 @@ lsp_zero.configure('gopls', {
 
 -- to learn how to use mason.nvim
 -- read this: https://github.com/VonHeikemen/lsp-zero.nvim/blob/v3.x/doc/md/guide/integrate-with-mason-nvim.md
--- mason = require('mason')
--- mason_lsp = require('mason-lspconfig')
--- cmp = require('cmp')
--- cmp_lsp = require('cmp_nvim_lsp')
+mason = require('mason')
+mason_lsp = require('mason-lspconfig')
 
--- mason.setup({})
--- mason_lsp.setup({
---   ensure_installed = {
---       "gopls",
---   },
---   handlers = {
---     function(server_name) -- defualt handler
---       require('lspconfig')[server_name].setup({})
---     end,
---   },
--- })
+mason.setup({})
+mason_lsp.setup({
+  ensure_installed = {
+      "gopls",
+  },
+})
 
 vim.keymap.set('n', '<leader>mo', '<cmd>Mason<CR>', {})
 
