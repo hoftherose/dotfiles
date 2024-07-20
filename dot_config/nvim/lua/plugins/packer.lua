@@ -45,7 +45,7 @@ return require('packer').startup(function(use)
                 }
             })
 		end,
-	}) -- insert or command mode jj/jk 
+	}) -- insert or command mode jj/jk TODO Remove for actual shortcuts
 	use ({
 		'lewis6991/gitsigns.nvim',
 		config = function()
@@ -86,6 +86,7 @@ return require('packer').startup(function(use)
 	}) -- TODO (configure document)
     use ({'williamboman/mason.nvim'}) -- TODO (configure-setup)
     use ({'williamboman/mason-lspconfig.nvim'})
+    use ({'nvimtools/none-ls.nvim'})
     use ({
        'kylechui/nvim-surround',
        tag = '*',
