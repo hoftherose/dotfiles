@@ -56,5 +56,5 @@ mason_null_ls.setup({
     }
 })
 
-vim.keymap.set('n', '<leader>mo', '<cmd>Mason<CR>', {})
+vim.keymap.set('n', '<leader>mo', '<cmd>Mason<CR>')
 
