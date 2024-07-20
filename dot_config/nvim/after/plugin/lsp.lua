@@ -37,31 +37,23 @@ lsp_zero.configure('gopls', {
 })
 lsp_zero.configure('basedpyright', {})
 
--- lsp_zero.configure('ruff_lsp', {
---     settings = {
---         codeAction = {
---             disableRuleComment = {
---                 enable = false,
---             },
---         },
---         lint = {
---             run = 'onSave',
---         },
---     }
--- })
-
 -- to learn how to use mason.nvim
 -- read this: https://github.com/VonHeikemen/lsp-zero.nvim/blob/v3.x/doc/md/guide/integrate-with-mason-nvim.md
 mason = require('mason')
 mason_lsp = require('mason-lspconfig')
+mason_null_ls = require('mason-null-ls')
 
 mason.setup({})
 mason_lsp.setup({
   ensure_installed = {
       "gopls",
       "basedpyright",
-      -- "ruff_lsp",
   },
+})
+mason_null_ls.setup({
+    ensure_installed = {
+        "black",
+    }
 })
 
 vim.keymap.set('n', '<leader>mo', '<cmd>Mason<CR>', {})
