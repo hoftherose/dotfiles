@@ -16,8 +16,8 @@ function custom_on_attach(client, bufnr)
   vim.keymap.set('n', '<leader>mf', vim.lsp.buf.format, opt 'Format buffer/file')
   vim.keymap.set('n', '<leader>ma', vim.lsp.buf.code_action, opt 'Select a code action')
   vim.keymap.set('n', '<leader>dh', vim.diagnostic.open_float, opt 'Open diagnostic window')
-  vim.keymap.set('n', '<leader>dj', vim.diagnostic.goto_prev, opt 'Move to prev diagnostic')
-  vim.keymap.set('n', '<leader>dk', vim.diagnostic.goto_next, opt 'Move to next diagnostic')
+  vim.keymap.set('n', '<leader>dj', vim.diagnostic.goto_next, opt 'Move to next diagnostic')
+  vim.keymap.set('n', '<leader>dk', vim.diagnostic.goto_prev, opt 'Move to prev diagnostic')
 end
 
 lsp_zero.on_attach(custom_on_attach)
