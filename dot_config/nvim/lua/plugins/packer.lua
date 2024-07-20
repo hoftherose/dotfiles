@@ -2,13 +2,13 @@ vim.cmd [[packadd packer.nvim]]
 
 return require('packer').startup(function(use)
 	use ({ 'wbthomason/packer.nvim' })
-	use ({ 'kevinhwang91/rnvimr', run = 'make sync' }) -- er + terminal shortcuts + ranger shortcuts
+	use ({ 'kevinhwang91/rnvimr', run = 'make sync' }) -- er + terminal shortcuts + ranger shortcuts TODO (Configure)
 	use ({
 		'kdheepak/lazygit.nvim',
 		requires = {
 			'nvim-lua/plenary.nvim',
 		},
-	}) -- lg + terminal shortcuts + lazygit shortcuts
+	}) -- lg + terminal shortcuts + lazygit shortcuts TODO (Configure)
 	use ({
 		'crnvl96/lazydocker.nvim',
 		config = function()
@@ -17,12 +17,12 @@ return require('packer').startup(function(use)
 		requires = {
 			'MunifTanjim/nui.nvim'
 		},
-	}) -- ld + terminal shortcuts + lazydocker shortcuts
-	use ({ 'holy-tech/k9s.nvim' }) -- lk + terminal shortcuts + k9s shortcuts
+	}) -- ld + terminal shortcuts + lazydocker shortcuts TODO (Configure)
+	use ({ 'holy-tech/k9s.nvim' }) -- lk + terminal shortcuts + k9s shortcuts TODO (replace/Configure)
 	use ({
 		'nvim-telescope/telescope.nvim', tag = '0.1.4',
 		requires = {{ 'nvim-lua/plenary.nvim' }}
-	}) -- s*
+	}) -- sf (find) sF (find files) sg (find git)
 	use ({ 'scottmckendry/cyberdream.nvim' })
 	use ({ 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' })
 	use ({ 'theprimeagen/harpoon' }) -- ee/ea/e#
@@ -30,7 +30,7 @@ return require('packer').startup(function(use)
 	use ({
 		'nvim-lualine/lualine.nvim',
 		dependencies = { 'nvim-tree/nvim-web-devicons' }
-	})
+	}) -- TODO (configure)
 	use ({
 		'max397574/better-escape.nvim',
 		config = function()
@@ -73,7 +73,7 @@ return require('packer').startup(function(use)
 				},
 			})
 		end,
-	})
+	}) -- TODO (configure)
 	use ({
 		'VonHeikemen/lsp-zero.nvim',
 		branch = 'v3.x',
@@ -83,8 +83,8 @@ return require('packer').startup(function(use)
 			{'hrsh7th/cmp-nvim-lsp'},
 			{'L3MON4D3/LuaSnip'},
 		}
-	})
-    use ({'williamboman/mason.nvim'})
+	}) -- TODO (configure document)
+    use ({'williamboman/mason.nvim'}) -- TODO (configure-setup)
     use ({'williamboman/mason-lspconfig.nvim'})
     use ({
        'kylechui/nvim-surround',
@@ -92,7 +92,7 @@ return require('packer').startup(function(use)
        config = function()
            require('nvim-surround').setup({})
        end
-    }) -- ysiw csiw dsiw
+    }) -- ysiw" ysi" ys$" cs'" ds" dsf (function calls)
     use ({
         'Wansmer/treesj',
         requires = { 'nvim-treesitter/nvim-treesitter' },
@@ -102,7 +102,7 @@ return require('packer').startup(function(use)
                 dot_repeat = false,
             })
         end
-    })
+    }) -- <leader>j (join) <leader>s (split)
     use ({ 'f-person/git-blame.nvim' })
     use ({
         'akinsho/toggleterm.nvim',
@@ -110,9 +110,9 @@ return require('packer').startup(function(use)
         config = function()
             require('toggleterm').setup()
         end
-    }) -- et
+    }) -- et (TODO Replace)
     use ({ 'terryma/vim-multiple-cursors' }) -- v mode C-n
-    use ({ 'tpope/vim-commentary' }) -- gcc toggle comments
+    use ({ 'tpope/vim-commentary' }) -- gcc toggle comments TODO change to mc
     use ({ 'preservim/tagbar' }) -- tt
-    use ({ 'neoclide/coc.nvim' })
+    use ({ 'neoclide/coc.nvim' }) -- TODO config
 end)
