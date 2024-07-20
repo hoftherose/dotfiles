@@ -25,3 +25,6 @@ require'nvim-treesitter.configs'.setup {
     additional_vim_regex_highlighting = false,
   },
 }
+
+vim.keymap.set('n', '<leader>j', '<cmd>TSJJoin<CR>')
+vim.keymap.set('n', '<leader>s', '<cmd>TSJSplit<CR>')
