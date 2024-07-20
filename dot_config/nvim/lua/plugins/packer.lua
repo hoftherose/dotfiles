@@ -121,7 +121,7 @@ return require('packer').startup(function(use)
         branch = 'regexp',
         config = function()
             require('venv-selector').setup()
-            vim.keymap.set('n', '<leader>mv', '<cmd>VenvSelector<CR>')
+            vim.keymap.set('n', '<leader>mv', '<cmd>VenvSelect<CR>')
         end,
     })
     use ({ 'f-person/git-blame.nvim' })
