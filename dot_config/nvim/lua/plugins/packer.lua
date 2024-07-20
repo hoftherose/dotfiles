@@ -111,6 +111,18 @@ return require('packer').startup(function(use)
             })
         end
     }) -- <leader>j (join) <leader>s (split)
+    use ({
+        'linux-cultist/venv-selector.nvim',
+        dependencies = {
+            'neovim/nvim-lspconfig',
+            { 'nvim-telescope/telescope.nvim', branch = '0.1.x', dependencies = { 'nvim-lua/plenary.nvim' } }
+        },
+        lazy = false,
+        branch = 'regexp',
+        config = function()
+            require('venv-selector').setup()
+        end,
+    })
     use ({ 'f-person/git-blame.nvim' })
     use ({
         'akinsho/toggleterm.nvim',
