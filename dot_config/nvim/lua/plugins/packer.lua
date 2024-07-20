@@ -122,6 +122,9 @@ return require('packer').startup(function(use)
         config = function()
             require('venv-selector').setup()
         end,
+        keys = {
+            { 'mv', '<cmd>VenvSelector<CR>' },
+        },
     })
     use ({ 'f-person/git-blame.nvim' })
     use ({
