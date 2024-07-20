@@ -86,7 +86,14 @@ return require('packer').startup(function(use)
 	}) -- TODO (configure document)
     use ({'williamboman/mason.nvim'}) -- TODO (configure-setup)
     use ({'williamboman/mason-lspconfig.nvim'})
-    use ({'nvimtools/none-ls.nvim'})
+    use ({
+        "jay-babu/mason-null-ls.nvim",
+        -- event = { "BufReadPre", "BufNewFile" },
+        requires = {
+            "williamboman/mason.nvim",
+            "nvimtools/none-ls.nvim",
+        },
+    })
     use ({
        'kylechui/nvim-surround',
        tag = '*',
