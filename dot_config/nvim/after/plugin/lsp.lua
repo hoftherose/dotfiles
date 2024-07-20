@@ -41,19 +41,24 @@ lsp_zero.configure('basedpyright', {})
 -- read this: https://github.com/VonHeikemen/lsp-zero.nvim/blob/v3.x/doc/md/guide/integrate-with-mason-nvim.md
 mason = require('mason')
 mason_lsp = require('mason-lspconfig')
+null_ls = require('null-ls')
 mason_null_ls = require('mason-null-ls')
 
-mason.setup({})
-mason_lsp.setup({
+mason.setup({
   ensure_installed = {
       "gopls",
       "basedpyright",
+      "black",
   },
 })
-mason_null_ls.setup({
-    ensure_installed = {
-        "black",
+mason_lsp.setup({})
+null_ls.setup({
+    sources = {
+        null_ls.builtins.formatting.black
     }
+})
+mason_null_ls.setup({
+    automatic_installation = true,
 })
 
 vim.keymap.set('n', '<leader>mo', '<cmd>Mason<CR>')
