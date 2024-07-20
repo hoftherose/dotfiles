@@ -97,7 +97,10 @@ return require('packer').startup(function(use)
         'Wansmer/treesj',
         requires = { 'nvim-treesitter/nvim-treesitter' },
         config = function()
-            require('treesj').setup({})
+            require('treesj').setup({
+                use_default_keymaps = false,
+                dot_repeat = false,
+            })
         end
     })
     use ({ 'f-person/git-blame.nvim' })
