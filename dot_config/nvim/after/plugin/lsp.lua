@@ -41,6 +41,7 @@ lsp_zero.use('basedpyright', {
             analysis = {
                 diagnosticSeverityOverrides = {
                     reportPrivateLocalImportUsage = "none",
+                    reportImplicitRelativeImport = "none",
                 }
             },
         },
