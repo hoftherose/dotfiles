@@ -4,7 +4,7 @@ require("catppuccin").setup({
         light = "latte",
         dark = "latte",
     },
-    transparent_background = true,
+    transparent_background = false,
     show_end_of_buffer = false,
     term_colors = false,
     dim_inactive = {
@@ -30,7 +30,12 @@ require("catppuccin").setup({
         operators = {},
         -- miscs = {}, -- Uncomment to turn off hard-coded styles
     },
-    color_overrides = {},
+    color_overrides = {
+        latte = {
+            text = '#ffffff',
+            base = '#202020',
+        },
+    },
     custom_highlights = {},
     default_integrations = true,
     integrations = {
