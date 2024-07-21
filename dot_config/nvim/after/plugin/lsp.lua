@@ -41,6 +41,7 @@ lsp_zero.configure('basedpyright', {})
 -- read this: https://github.com/VonHeikemen/lsp-zero.nvim/blob/v3.x/doc/md/guide/integrate-with-mason-nvim.md
 mason = require('mason')
 mason_lsp = require('mason-lspconfig')
+lspconfig = require('lspconfig')
 null_ls = require('null-ls')
 mason_null_ls = require('mason-null-ls')
 
@@ -51,11 +52,14 @@ mason.setup({
       "black",
   },
 })
-mason_lsp.setup({
+mason_lsp.setup({})
+lspconfig.setup({
     settings = {
-        basedpyright = {
+        python = {
             analysis = {
-                reportPrivateImportUsage = false,
+                diagnosticSeverityOverrides = {
+                    reportPrivateImportUsage = "none",
+                },
             },
         },
     },
