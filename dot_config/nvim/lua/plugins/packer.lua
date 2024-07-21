@@ -84,13 +84,12 @@ return require('packer').startup(function(use)
 			{'L3MON4D3/LuaSnip'},
 		}
 	}) -- TODO (configure document)
-    use ({'williamboman/mason.nvim'}) -- TODO (configure-setup)
     use ({'williamboman/mason-lspconfig.nvim'})
     use ({
         "jay-babu/mason-null-ls.nvim",
         -- event = { "BufReadPre", "BufNewFile" },
         requires = {
-            "williamboman/mason.nvim",
+            "williamboman/mason.nvim", -- TODO (configure-setup)
             "nvimtools/none-ls.nvim",
         },
     })
@@ -135,7 +134,7 @@ return require('packer').startup(function(use)
     use ({ 'terryma/vim-multiple-cursors' }) -- v mode C-n
     use ({ 'tpope/vim-commentary' }) -- gcc toggle comments TODO change to mc
     use ({ 'preservim/tagbar' }) -- tt
-    use ({ 'folke/trouble.nvim' })
+    use ({ 'folke/trouble.nvim' }) -- TODO config
     use ({
         'neoclide/coc.nvim',
         branch = 'release',

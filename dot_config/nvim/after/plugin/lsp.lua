@@ -22,7 +22,7 @@ end
 
 lsp_zero.on_attach(custom_on_attach)
 
-lsp_zero.setup_servers({ 'gopls', 'basedpyright', 'docker_compose_language_service', 'dockerls' })
+lsp_zero.setup_servers({ 'gopls', 'basedpyright', 'dockerls', 'docker_compose_language_service' })
 lsp_zero.configure('gopls', {
     cmd = {'gopls'},
     settings = {
@@ -53,14 +53,17 @@ lsp_zero.use('basedpyright', {
 -- read this: https://github.com/VonHeikemen/lsp-zero.nvim/blob/v3.x/doc/md/guide/integrate-with-mason-nvim.md
 require('mason').setup({
   ensure_installed = {
-      "gopls",
-      "basedpyright",
       "black",
-      "docker-compose-language-service",
-      "dockerfile-language-server",
   },
 })
-require('mason-lspconfig').setup({})
+require('mason-lspconfig').setup({
+  ensure_installed = {
+      "gopls",
+      "basedpyright",
+      "dockerls",
+      "docker_compose_language_service",
+  },
+})
 null_ls = require('null-ls')
 null_ls.setup({
     sources = {
