@@ -35,13 +35,13 @@ lsp_zero.configure('gopls', {
         }
     }
 })
-lsp_zero.configure('basedpyright', {
+lsp_zero.use('basedpyright', {
     settings = {
-        python = {
+        basedpyright = {
             analysis = {
                 diagnosticSeverityOverrides = {
-                    reportPrivateImportUsage = "none",
-                },
+                    reportPrivateLocalImportUsage = "none",
+                }
             },
         },
     },
