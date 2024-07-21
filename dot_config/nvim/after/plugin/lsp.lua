@@ -51,7 +51,15 @@ mason.setup({
       "black",
   },
 })
-mason_lsp.setup({})
+mason_lsp.setup({
+    settings = {
+        basedpyright = {
+            analysis = {
+                privateImportFromPyTypedModule = false,
+            },
+        },
+    },
+})
 null_ls.setup({
     sources = {
         null_ls.builtins.formatting.black
