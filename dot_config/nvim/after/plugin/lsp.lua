@@ -22,7 +22,7 @@ end
 
 lsp_zero.on_attach(custom_on_attach)
 
-lsp_zero.setup_servers({ 'gopls', 'basedpyright', 'dockerls', 'yamlls' })
+lsp_zero.setup_servers({ 'gopls', 'basedpyright', 'dockerls', 'yamlls', 'bashls' })
 lsp_zero.configure('gopls', {
     cmd = {'gopls'},
     settings = {
@@ -63,6 +63,7 @@ require('mason-lspconfig').setup({
       "basedpyright",
       "dockerls",
       "yamlls",
+      "bashls",
   },
 })
 null_ls = require('null-ls')
