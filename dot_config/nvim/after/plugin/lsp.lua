@@ -22,7 +22,7 @@ end
 
 lsp_zero.on_attach(custom_on_attach)
 
-lsp_zero.setup_servers({ 'gopls', 'basedpyright' })
+lsp_zero.setup_servers({ 'gopls', 'basedpyright', 'docker_compose_language_service', 'dockerls' })
 lsp_zero.configure('gopls', {
     cmd = {'gopls'},
     settings = {
@@ -56,6 +56,8 @@ require('mason').setup({
       "gopls",
       "basedpyright",
       "black",
+      "docker-compose-language-service",
+      "dockerfile-language-server",
   },
 })
 require('mason-lspconfig').setup({})
