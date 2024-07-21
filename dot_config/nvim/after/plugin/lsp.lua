@@ -55,6 +55,7 @@ require('mason').setup({
   ensure_installed = {
       "black",
       "yamlfmt",
+      "shellcheck",
   },
 })
 require('mason-lspconfig').setup({
@@ -73,6 +74,8 @@ null_ls.setup({
         null_ls.builtins.formatting.yamlfmt.with({
             extra_args = { "-formatter", "indent=4" },
         }),
+        require("none-ls-shellcheck.diagnostics"),
+        require("none-ls-shellcheck.code_actions"),
     }
 })
 require('mason-null-ls').setup({
