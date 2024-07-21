@@ -55,7 +55,7 @@ mason_lsp.setup({
     settings = {
         basedpyright = {
             analysis = {
-                privateImportFromPyTypedModule = false,
+                reportPrivateImportUsage = false,
             },
         },
     },
