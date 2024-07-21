@@ -22,7 +22,7 @@ end
 
 lsp_zero.on_attach(custom_on_attach)
 
-lsp_zero.setup_servers({ 'gopls', 'basedpyright', 'dockerls', 'docker_compose_language_service', 'yamlls' })
+lsp_zero.setup_servers({ 'gopls', 'basedpyright', 'dockerls', 'yamlls' })
 lsp_zero.configure('gopls', {
     cmd = {'gopls'},
     settings = {
@@ -55,7 +55,6 @@ require('mason').setup({
   ensure_installed = {
       "black",
       "yamlfmt",
-      "yamllint",
   },
 })
 require('mason-lspconfig').setup({
@@ -63,7 +62,6 @@ require('mason-lspconfig').setup({
       "gopls",
       "basedpyright",
       "dockerls",
-      "docker_compose_language_service",
       "yamlls",
   },
 })
@@ -72,7 +70,6 @@ null_ls.setup({
     sources = {
         null_ls.builtins.formatting.black,
         null_ls.builtins.formatting.yamlfmt,
-        -- null_ls.builtins.diagnostics.yamllint,
     }
 })
 require('mason-null-ls').setup({
