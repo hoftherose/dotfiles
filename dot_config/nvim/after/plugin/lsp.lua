@@ -57,7 +57,8 @@ require('mason').setup({
   },
 })
 require('mason-lspconfig').setup({})
-require('null-ls').setup({
+null_ls = require('null-ls')
+null_ls.setup({
     sources = {
         null_ls.builtins.formatting.black
     }
