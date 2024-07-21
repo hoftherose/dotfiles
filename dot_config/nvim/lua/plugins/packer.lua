@@ -87,7 +87,7 @@ return require('packer').startup(function(use)
     use ({'williamboman/mason-lspconfig.nvim'})
     use ({
         "jay-babu/mason-null-ls.nvim",
-        event = { "BufReadPre", "BufNewFile" },
+        -- event = { "BufReadPre", "BufNewFile" },
         requires = {
             "williamboman/mason.nvim", -- TODO (configure-setup)
             "nvimtools/none-ls.nvim",
