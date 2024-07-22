@@ -145,7 +145,14 @@ return require('packer').startup(function(use)
     use ({ 'terryma/vim-multiple-cursors' }) -- v mode C-n
     use ({ 'tpope/vim-commentary' }) -- gcc toggle comments TODO change to mc
     use ({ 'preservim/tagbar' }) -- tt toggle tagbar
-    use ({ 'folke/trouble.nvim' }) -- td toggle diagnostics
+    use ({
+        'folke/trouble.nvim',
+        opts = {},
+        cmd = "Trouble",
+        config = function()
+            require('trouble').setup({})
+        end
+    }) -- td toggle diagnostics
     use ({
         'neoclide/coc.nvim',
         branch = 'release',
