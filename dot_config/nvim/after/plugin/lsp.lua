@@ -81,6 +81,15 @@ require('mason-null-ls').setup({
     automatic_installation = true,
 })
 
-vim.diagnostic.config({signs = false})
+vim.diagnostic.config({
+    signs = {
+        enable = false,
+    },
+})
+vim.lsp.handlers['textDocument/publishDiagnostics'] = vim.lsp.with({
+    vim.lsp.diagnostic.on_publish_diagnostics, {
+        signs = false,
+    },
+})
 vim.keymap.set('n', '<leader>mo', '<cmd>Mason<CR>')
 
