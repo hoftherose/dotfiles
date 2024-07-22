@@ -8,9 +8,9 @@ function custom_on_attach(client, bufnr)
   -- see :help lsp-zero-keybindings
   -- to learn the available actions
   -- lsp_zero.default_keymaps({buffer = bufnr})
-  vim.keymap.set('n', '<leader>gd', vim.lsp.buf.definition, opt 'Go to definition')
-  vim.keymap.set('n', '<leader>gt', vim.lsp.buf.type_definition, opt 'Go to type definition')
-  vim.keymap.set('n', '<leader>gl', vim.lsp.buf.references, opt 'List references of symbol')
+  vim.keymap.set('n', '<leader>jd', vim.lsp.buf.definition, opt 'Go to definition')
+  vim.keymap.set('n', '<leader>jt', vim.lsp.buf.type_definition, opt 'Go to type definition')
+  vim.keymap.set('n', '<leader>jl', vim.lsp.buf.references, opt 'List references of symbol')
   vim.keymap.set('n', '<leader>mh', vim.lsp.buf.hover, opt 'Displays hover about the symbol')
   vim.keymap.set('n', '<leader>ms', vim.lsp.buf.signature_help, opt 'Get signature_help')
   vim.keymap.set('n', '<leader>mf', vim.lsp.buf.format, opt 'Format buffer/file')

@@ -1,4 +1,14 @@
 vim.cmd [[packadd packer.nvim]]
+-- * indicates something I don't like
+-- e explorer apps (ranger, harpoon, terminal*)
+-- l lazy apps (k9s, lazygit, lazydocker)
+-- s search (telescope)
+-- t toggles side windows (undotree, tagbar, trouble(diagnostic))
+-- s Split/Join (Join j and Split s)
+-- m Mason/Lsp commands (Open, hover, signature, *format, venvSelect)
+-- j Jump to commands with LSP's (definition, type, list)
+-- g Git tooling (Gitsigns)
+-- mapped (y, p, d, x)
 
 return require('packer').startup(function(use)
 	use ({ 'wbthomason/packer.nvim' })
@@ -134,8 +144,8 @@ return require('packer').startup(function(use)
     }) -- et (TODO Replace)
     use ({ 'terryma/vim-multiple-cursors' }) -- v mode C-n
     use ({ 'tpope/vim-commentary' }) -- gcc toggle comments TODO change to mc
-    use ({ 'preservim/tagbar' }) -- tt
-    use ({ 'folke/trouble.nvim' }) -- TODO config
+    use ({ 'preservim/tagbar' }) -- tt toggle tagbar
+    use ({ 'folke/trouble.nvim' }) -- td toggle diagnostics
     use ({
         'neoclide/coc.nvim',
         branch = 'release',
