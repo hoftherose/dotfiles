@@ -80,5 +80,6 @@ require('mason-null-ls').setup({
     automatic_installation = true,
 })
 
+vim.diagnostic.config({signs = false})
 vim.keymap.set('n', '<leader>mo', '<cmd>Mason<CR>')
 
