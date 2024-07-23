@@ -80,6 +80,10 @@ return require('packer').startup(function(use)
 						name = 'FabricTesting',
 						path = '~/.obsidian/FabricTesting',
 					},
+                    {
+                        name = 'InYourEyes',
+                        path = '~/.obsidian/InYourEyes',
+                    },
 				},
 			})
 		end,
