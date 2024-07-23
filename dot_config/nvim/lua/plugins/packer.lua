@@ -40,7 +40,7 @@ return require('packer').startup(function(use)
 	use ({
 		'nvim-lualine/lualine.nvim',
 		dependencies = { 'nvim-tree/nvim-web-devicons' }
-	}) -- TODO (configure)
+	})
 	use ({
 		'max397574/better-escape.nvim',
 		config = function()
@@ -93,13 +93,12 @@ return require('packer').startup(function(use)
 			{'hrsh7th/cmp-nvim-lsp'},
 			{'L3MON4D3/LuaSnip'},
 		}
-	}) -- TODO (configure document)
+	})
     use ({'williamboman/mason-lspconfig.nvim'})
     use ({
         "jay-babu/mason-null-ls.nvim",
-        -- event = { "BufReadPre", "BufNewFile" },
         requires = {
-            "williamboman/mason.nvim", -- TODO (configure-setup)
+            "williamboman/mason.nvim",
             "nvimtools/none-ls.nvim",
         },
     })
