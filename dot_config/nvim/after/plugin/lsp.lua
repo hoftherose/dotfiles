@@ -55,6 +55,7 @@ require('mason').setup({
   ensure_installed = {
       "black",
       "yamlfmt",
+      "debugpy",
       "shellcheck", -- Doesn't work with null_ls, manually install
   },
 })
