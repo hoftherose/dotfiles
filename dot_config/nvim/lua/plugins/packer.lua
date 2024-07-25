@@ -6,6 +6,7 @@ vim.cmd [[packadd packer.nvim]]
 -- t toggles side windows (undotree, tagbar, trouble(diagnostic))
 -- s Split/Join (Join j and Split s)
 -- m Mason/Lsp commands (Open, hover, signature, *format, venvSelect)
+-- d Diagnostics and debugging
 -- j Jump to commands with LSP's (definition, type, list)
 -- g Git tooling (Gitsigns)
 -- mapped (y, p, d, x)

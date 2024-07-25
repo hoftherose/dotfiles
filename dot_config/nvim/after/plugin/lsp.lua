@@ -84,4 +84,7 @@ require('mason-null-ls').setup({
 require("dapui").setup()
 
 vim.keymap.set('n', '<leader>mo', '<cmd>Mason<CR>')
+vim.keymap.set('n', '<leader>dt', '<cmd>DapUiToggle<CR>', {noremap=true})
+vim.keymap.set('n', '<leader>db', '<cmd>DapToggleBreakPoint<CR>', {noremap=true})
+vim.keymap.set('n', '<leader>dc', '<cmd>DapContinue<CR>', {noremap=true})
 
