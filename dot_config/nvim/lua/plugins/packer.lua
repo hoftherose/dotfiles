@@ -107,6 +107,7 @@ return require('packer').startup(function(use)
         },
     })
     use ({"gbprod/none-ls-shellcheck.nvim"})
+    use ({ "rcarriga/nvim-dap-ui", requires = {"mfussenegger/nvim-dap", "nvim-neotest/nvim-nio"} })
     use ({
        'kylechui/nvim-surround',
        tag = '*',
