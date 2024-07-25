@@ -81,6 +81,7 @@ null_ls.setup({
 require('mason-null-ls').setup({
     automatic_installation = true,
 })
+require("dapui").setup()
 
 vim.keymap.set('n', '<leader>mo', '<cmd>Mason<CR>')
 
