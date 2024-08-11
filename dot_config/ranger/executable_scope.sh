@@ -47,7 +47,7 @@ PYGMENTIZE_STYLE=${PYGMENTIZE_STYLE:-autumn}
 OPENSCAD_IMGSIZE=${RNGR_OPENSCAD_IMGSIZE:-1000,1000}
 OPENSCAD_COLORSCHEME=${RNGR_OPENSCAD_COLORSCHEME:-Tomorrow Night}
 SECRETS_FILE_PATTERN=( *env )
-SECRETS_CLOAK_PATTERN=( =.+ )
+SECRETS_CLOAK_PATTERN=( "=(.+)" )
 
 handle_extension() {
     case "${FILE_EXTENSION_LOWER}" in
@@ -301,9 +301,11 @@ handle_mime() {
         ## Text
         text/* | */xml | application/javascript )
             ## Syntax highlight
-            for pattern in "${SECRETS_FILE_PATTERN[@]}"; do
-                if [[ "${FILE_PATH##*/}" == $pattern ]]; then
-                    cat < .env | sed -E 's/=(.+)/=[REDACTED]/g'
+            for i in "${!SECRETS_FILE_PATTERN[@]}"; do
+                file_pattern=${SECRETS_FILE_PATTERN[i]}
+                cloak_pattern=${SECRETS_CLOAK_PATTERN[i]}
+                if [[ "${FILE_PATH##*/}" == $file_pattern ]]; then
+                    cat < .env | sed -E "s/$cloak_pattern/=[REDACTED]/g"
                     exit 5
                 fi
             done
