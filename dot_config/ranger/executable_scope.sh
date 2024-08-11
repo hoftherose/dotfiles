@@ -46,6 +46,8 @@ HIGHLIGHT_OPTIONS="--replace-tabs=${HIGHLIGHT_TABWIDTH} --style=${HIGHLIGHT_STYL
 PYGMENTIZE_STYLE=${PYGMENTIZE_STYLE:-autumn}
 OPENSCAD_IMGSIZE=${RNGR_OPENSCAD_IMGSIZE:-1000,1000}
 OPENSCAD_COLORSCHEME=${RNGR_OPENSCAD_COLORSCHEME:-Tomorrow Night}
+SECRETS_FILE_PATTERN=( *env )
+SECRETS_CLOAK_PATTERN=( =.+ )
 
 handle_extension() {
     case "${FILE_EXTENSION_LOWER}" in
@@ -162,7 +164,7 @@ handle_image() {
         ## Video
         video/*)
             # Thumbnail
-	    ffmpeg -threads $(nproc) -i "${FILE_PATH}" -ss 00:00:00.0 -t 10 -an -f gif "${IMAGE_CACHE_PATH}" -s 0
+	        ffmpeg -threads "$(nproc)" -i "${FILE_PATH}" -ss 00:00:00.0 -t 10 -an -f gif "${IMAGE_CACHE_PATH}" -s 0
             exit 6;;
 
 
@@ -299,6 +301,12 @@ handle_mime() {
         ## Text
         text/* | */xml | application/javascript )
             ## Syntax highlight
+            for pattern in "${SECRETS_FILE_PATTERN[@]}"; do
+                if [[ "${FILE_PATH##*/}" == $pattern ]]; then
+                    cat < .env | sed -E 's/=(.+)/=[REDACTED]/g'
+                    exit 5
+                fi
+            done
             if [[ "$( stat --printf='%s' -- "${FILE_PATH}" )" -gt "${HIGHLIGHT_SIZE_MAX}" ]]; then
                 exit 2
             fi
@@ -355,3 +363,4 @@ handle_mime "${MIMETYPE}"
 handle_fallback
 
 exit 1
+
