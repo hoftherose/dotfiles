@@ -46,8 +46,9 @@ HIGHLIGHT_OPTIONS="--replace-tabs=${HIGHLIGHT_TABWIDTH} --style=${HIGHLIGHT_STYL
 PYGMENTIZE_STYLE=${PYGMENTIZE_STYLE:-autumn}
 OPENSCAD_IMGSIZE=${RNGR_OPENSCAD_IMGSIZE:-1000,1000}
 OPENSCAD_COLORSCHEME=${RNGR_OPENSCAD_COLORSCHEME:-Tomorrow Night}
-SECRETS_FILE_PATTERN=( *env )
-SECRETS_CLOAK_PATTERN=( "=(.+)" )
+SECRETS_FILE_PATTERN=( *env dev* )
+SECRETS_CLOAK_PATTERN=( "(.*=).+()" "(.*:).+" )
+
 
 handle_extension() {
     case "${FILE_EXTENSION_LOWER}" in
@@ -305,7 +306,7 @@ handle_mime() {
                 file_pattern=${SECRETS_FILE_PATTERN[i]}
                 cloak_pattern=${SECRETS_CLOAK_PATTERN[i]}
                 if [[ "${FILE_PATH##*/}" == $file_pattern ]]; then
-                    cat < .env | sed -E "s/$cloak_pattern/=[REDACTED]/g"
+                    cat < .env | sed -E "s/$cloak_pattern/[REDACTED]/g"
                     exit 5
                 fi
             done
