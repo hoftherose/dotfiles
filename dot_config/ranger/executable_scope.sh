@@ -49,7 +49,7 @@ OPENSCAD_COLORSCHEME=${RNGR_OPENSCAD_COLORSCHEME:-Tomorrow Night}
 ## Secrets hidding, only replaces one pattern, groups 1 and 2 are left untouched
 ## One to one matching between SECRETS_FILE_PATTERN and SECRETS_CLOAK_PATTERN
 SECRETS_FILE_PATTERN=( *.env secrets.yml)
-SECRETS_CLOAK_PATTERN=( "(.*=).+()" "(.*:).+()")
+SECRETS_CLOAK_PATTERN=( "(.*=).+()" "(.*(?:pass|dockerconfigjson):).+()")
 
 
 handle_extension() {
@@ -308,7 +308,7 @@ handle_mime() {
                 file_pattern=${SECRETS_FILE_PATTERN[i]}
                 if [[ "${FILE_PATH##*/}" == $file_pattern ]]; then
                     cloak_pattern=${SECRETS_CLOAK_PATTERN[i]}
-                    cat < "${FILE_PATH}" | sed -E "s/$cloak_pattern/\1[REDACTED]\2/g"
+                    cat < "${FILE_PATH}" | perl -E "s/$cloak_pattern/\1\[REDACTED\]\2/g" -p
                     exit 5
                 fi
             done
