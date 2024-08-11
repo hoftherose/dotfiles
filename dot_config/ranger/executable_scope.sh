@@ -48,8 +48,8 @@ OPENSCAD_IMGSIZE=${RNGR_OPENSCAD_IMGSIZE:-1000,1000}
 OPENSCAD_COLORSCHEME=${RNGR_OPENSCAD_COLORSCHEME:-Tomorrow Night}
 ## Secrets hidding, only replaces one pattern, groups 1 and 2 are left untouched
 ## One to one matching between SECRETS_FILE_PATTERN and SECRETS_CLOAK_PATTERN
-SECRETS_FILE_PATTERN=( *env dev* )
-SECRETS_CLOAK_PATTERN=( "(.*=).+()" "(.*:).+()" )
+SECRETS_FILE_PATTERN=( *.env )
+SECRETS_CLOAK_PATTERN=( "(.*=).+()" )
 
 
 handle_extension() {
