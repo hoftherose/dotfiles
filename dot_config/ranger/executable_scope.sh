@@ -46,8 +46,10 @@ HIGHLIGHT_OPTIONS="--replace-tabs=${HIGHLIGHT_TABWIDTH} --style=${HIGHLIGHT_STYL
 PYGMENTIZE_STYLE=${PYGMENTIZE_STYLE:-autumn}
 OPENSCAD_IMGSIZE=${RNGR_OPENSCAD_IMGSIZE:-1000,1000}
 OPENSCAD_COLORSCHEME=${RNGR_OPENSCAD_COLORSCHEME:-Tomorrow Night}
+## Secrets hidding, only replaces one pattern, groups 1 and 2 are left untouched
+## One to one matching between SECRETS_FILE_PATTERN and SECRETS_CLOAK_PATTERN
 SECRETS_FILE_PATTERN=( *env dev* )
-SECRETS_CLOAK_PATTERN=( "(.*=).+()" "(.*:).+" )
+SECRETS_CLOAK_PATTERN=( "(.*=).+()" "(.*:).+()" )
 
 
 handle_extension() {
@@ -304,9 +306,9 @@ handle_mime() {
             ## Syntax highlight
             for i in "${!SECRETS_FILE_PATTERN[@]}"; do
                 file_pattern=${SECRETS_FILE_PATTERN[i]}
-                cloak_pattern=${SECRETS_CLOAK_PATTERN[i]}
                 if [[ "${FILE_PATH##*/}" == $file_pattern ]]; then
-                    cat < .env | sed -E "s/$cloak_pattern/[REDACTED]/g"
+                    cloak_pattern=${SECRETS_CLOAK_PATTERN[i]}
+                    cat < "${FILE_PATH}" | sed -E "s/$cloak_pattern/\1[REDACTED]\2/g"
                     exit 5
                 fi
             done
