@@ -158,9 +158,5 @@ return require('packer').startup(function(use)
             require('trouble').setup({})
         end
     }) -- td toggle diagnostics
-    use ({
-        'neoclide/coc.nvim',
-        branch = 'release',
-    }) -- TODO config
     use({"laytan/cloak.nvim"})
 end)
