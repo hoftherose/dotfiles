@@ -8,3 +8,8 @@ chezmoi -v apply
 ```
 
 To save change to chezmoi simply modify the chezmoi repo and commit changes once you are done.
+
+
+## Extra steps
+For logout to work properly on wayland you want to set /etc/systemd/logind.conf such that KillUserProcesses=yes, otherwise there will be a collision with users when you try to log back in.
+
