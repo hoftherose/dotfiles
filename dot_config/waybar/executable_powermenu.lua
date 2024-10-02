@@ -1,6 +1,6 @@
 #!/usr/bin/lua
 local options = {
-    [" Lock"] = "sddm-greeter --lock",
+    [" Lock"] = "sh ~/.config/hypr/scripts/swaylock-text.sh",
     [" Shut down"] = "systemctl poweroff",
     [" Reboot"] = "systemctl reboot",
     ["﫼 Log out"] = "loginctl kill-user $USER",
