@@ -1,9 +1,9 @@
 #!/usr/bin/lua
 local options = {
-    [" Lock"] = "swaylock",
+    [" Lock"] = "sddm-greeter --lock",
     [" Shut down"] = "systemctl poweroff",
     [" Reboot"] = "systemctl reboot",
-    ["﫼 Log out"] = "swaymsg exit",
+    ["﫼 Log out"] = "loginctl kill-user $USER",
     ["鈴 Suspend"] = "systemctl suspend",
     [" Hibernate"] = "systemctl hibernate",
 }
