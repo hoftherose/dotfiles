@@ -154,7 +154,7 @@
         },
         "escape": true,
         "exec": "/home/HolyTech/.config/waybar/mediaplayer.py --player spotify",
-        "on-click": "hyprctl dispatch togglespecialworkspace scratch_spotify"
+        "on-click": "hyprctl dispatch 'hl.dsp.workspace.toggle_special(\"spotify\")'"
     },
     "custom/l_end": {
         "format": " ",
