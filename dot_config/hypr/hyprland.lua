@@ -246,6 +246,7 @@ hl.bind(mainMod .. " + V", hl.dsp.window.float({ action = "toggle" }))
 
 hl.bind(mainMod .. " + T", hl.dsp.exec_cmd(terminal))
 hl.bind(mainMod .. " + E", hl.dsp.exec_cmd(fileManager))
+hl.bind(mainMod .. " + R", hl.dsp.exec_cmd(menu))
 hl.bind("SUPER + L"      , hl.dsp.exec_cmd(menu))
 hl.bind(mainMod .. " + X", hl.dsp.exec_cmd("looking-glass-client -F"))
 -- hl.bind(mainMod .. " + =", hl.dsp.exit())
