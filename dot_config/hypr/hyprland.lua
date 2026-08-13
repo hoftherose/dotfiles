@@ -36,7 +36,7 @@ hl.monitor({
 -- Set programs that you use
 local terminal      = "kitty byobu new -A -s main"
 local fileManager   = "kitty yazi"
-local menu          = "wofi --show drun"
+local menu          = "pkill wofi || wofi --show drun"
 
 -------------------
 ---- AUTOSTART ----
@@ -246,8 +246,7 @@ hl.bind(mainMod .. " + V", hl.dsp.window.float({ action = "toggle" }))
 
 hl.bind(mainMod .. " + T", hl.dsp.exec_cmd(terminal))
 hl.bind(mainMod .. " + E", hl.dsp.exec_cmd(fileManager))
-hl.bind(mainMod .. " + R", hl.dsp.exec_cmd(menu))
-hl.bind("SUPER + L"      , hl.dsp.exec_cmd(menu))
+hl.bind("SUPER + SUPER_L", hl.dsp.exec_cmd(menu), { release=true })
 hl.bind(mainMod .. " + X", hl.dsp.exec_cmd("looking-glass-client -F"))
 -- hl.bind(mainMod .. " + =", hl.dsp.exit())
 
