@@ -306,13 +306,13 @@ require('lazy').setup({
         {
             dir = '~/Public/amai.nvim',
         },
-        {
-            'hoftherose/shortcuts.nvim',
-            dependencies = {
-                'skywind3000/asyncrun.vim',
-                'MunifTanjim/nui.nvim',
-            },
-        },
+        -- {
+        --     'hoftherose/shortcuts.nvim',
+        --     dependencies = {
+        --         'skywind3000/asyncrun.vim',
+        --         'MunifTanjim/nui.nvim',
+        --     },
+        -- },
         {
             "cenk1cenk2/jq.nvim",
             dependencies = {
