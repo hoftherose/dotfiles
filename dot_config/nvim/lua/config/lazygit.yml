@@ -3,4 +3,8 @@ customCommands:
     context: "files"
     command: 'nohup sh ~/.config/nvim/scripts/nvim_send_file.sh {{.SelectedWorktree.Path}}/{{.SelectedFile.Name}} $NVIM_SOCKET &'
     description: "Open in nvim"
+  - key: 'e'
+    context: "commitFiles"
+    command: 'nohup sh ~/.config/nvim/scripts/nvim_send_file.sh {{.SelectedWorktree.Path}}/{{.SelectedCommitFile.Name}} $NVIM_SOCKET &'
+    description: "Open in nvim"
 
