@@ -371,11 +371,3 @@ hl.window_rule({
     no_focus = true,
 })
 
-hl.window_rule({
-    name = "ueberzugpp",
-    match = {
-        class = "ueberzugpp_.*",
-    },
-    no_anim = true,
-})
-
